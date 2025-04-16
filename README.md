@@ -78,6 +78,38 @@ This library provides a helper script (`scripts/embed-last-update.js`) as an exa
 
 Choose the method (JSON, generated module, environment variable) that best suits your project structure and build tools.
 
+## Remote Repository Workflow
+
+This library detects the last Git commit regardless of where the commit was made. Here's how to work with remote changes:
+
+1.  **Make a change on GitHub**:
+
+    - Edit files directly through the GitHub web interface
+    - Commit the change to your repository
+
+2.  **Pull the changes to your local repository**:
+
+    ```bash
+    git pull origin main  # or your branch name
+    ```
+
+3.  **Run the build script locally**:
+
+    ```bash
+    npm run embed-last-update  # or npm run build
+    ```
+
+    This will:
+
+    - Execute the script that fetches the latest commit date from Git
+    - Update the timestamp data file with the new date
+
+4.  **View the updated site**:
+    - Open your site/application in a browser
+    - The "Last updated" timestamp will reflect the commit you made on GitHub
+
+This workflow demonstrates how the library can detect changes made anywhere in the Git history, not just local changes.
+
 ## API
 
 - `getLastUpdate(): Date` - Returns the `Date` object of the last commit. Throws an error if `git` command fails.
