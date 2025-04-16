@@ -114,7 +114,3 @@ This workflow demonstrates how the library can detect changes made anywhere in t
 
 - `getLastUpdate(): Date` - Returns the `Date` object of the last commit. Throws an error if `git` command fails.
 - `getLastUpdateFormatted(format?: string): string` - Returns a formatted date string. Uses `toLocaleString()` by default. Provides very basic custom formatting (replace `YYYY`, `MM`, `DD`).
-
-## License
-
-ISC
